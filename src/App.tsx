@@ -1,11 +1,20 @@
-import { MantineProvider, Container, Box } from "@mantine/core"
-import { useState } from "react"
+import { MantineProvider, Container, Box, SimpleGrid } from "@mantine/core"
+import { useEffect, useState } from "react"
+import { fetchCars } from "./api"
 import CarForm from "./CarForm"
 import CarList from "./CarList"
 import { Car } from "./types"
 
 const App = () => {
   const [cars, setCars] = useState<Car[]>([])
+
+  useEffect(() => {
+    ;(async () => {
+      const cars: Car[] = await (await fetchCars()).json()
+      setCars(cars)
+    })()
+  }, [])
+
   return (
     <MantineProvider
       withGlobalStyles
@@ -14,8 +23,12 @@ const App = () => {
     >
       <Box m={40} />
       <Container>
-        <CarForm onSubmit={(car) => setCars([...cars, car])} />
-        <CarList cars={cars} />
+        <SimpleGrid cols={1}>
+          <Box>
+            <CarForm onSubmit={(car) => setCars([...cars, car])} />
+          </Box>
+          <CarList cars={cars} />
+        </SimpleGrid>
       </Container>
     </MantineProvider>
   )

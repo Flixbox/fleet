@@ -22,8 +22,12 @@ jobs:
         run: yarn
       - name: Test website
         run: yarn cy:ci
+        env:
+          API_URL: ${{ secrets.API_URL }}
       - name: Build website
         run: yarn vite:build
+        env:
+          API_URL: ${{ secrets.API_URL }}
 
       # Popular action to deploy to GitHub Pages:
       # Docs: https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-docusaurus

@@ -9,4 +9,7 @@ export default defineConfig({
     open: "/",
     port: 3000,
   },
+  define: {
+    "process.env": process.env,
+  },
 })
