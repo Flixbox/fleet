@@ -11,6 +11,12 @@
     "cy:ci": "run-p vite:dev cy:run -r"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@mantine/core": "^5.4.0",
+    "@mantine/form": "^5.4.0",
+    "@mantine/hooks": "^5.4.0",
+    "@mantine/modals": "^5.4.0",
+    "@mantine/notifications": "^5.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
