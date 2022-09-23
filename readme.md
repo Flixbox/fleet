@@ -2,6 +2,8 @@
 
 Manage your cars - perfectly!
 
+Note: GitHub Pages can be enabled manually in the CI. It's currently disabled in order to prevent API URL leakage.
+
 ## Setup
 
 Install dependencies with `yarn`

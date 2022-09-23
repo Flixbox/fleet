@@ -9,9 +9,10 @@ interface CarListProps {
 const CarList = ({ cars }: CarListProps) => {
   return (
     <>
+      <Text weight="bold">All cars</Text>
       {cars.map(
         ({ brand, createdAt, id, lastUpdatedAt, licensePlate, status }) => (
-          <Paper key={id}>
+          <Paper key={id} shadow="xs" withBorder p="md">
             <Text>Brand: {brand}</Text>
             <Text>createdAt: {createdAt}</Text>
             <Text>lastUpdatedAt: {lastUpdatedAt}</Text>

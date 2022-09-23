@@ -1,4 +1,10 @@
-import { MantineProvider, Container, Box, SimpleGrid } from "@mantine/core"
+import {
+  MantineProvider,
+  Container,
+  Box,
+  SimpleGrid,
+  Text,
+} from "@mantine/core"
 import { useEffect, useState } from "react"
 import { fetchCars } from "./api"
 import CarForm from "./CarForm"
@@ -21,7 +27,7 @@ const App = () => {
       withNormalizeCSS
       theme={{ colorScheme: "dark" }}
     >
-      <Box m={40} />
+      <Box m="md" />
       <Container>
         <SimpleGrid cols={1}>
           <Box>
