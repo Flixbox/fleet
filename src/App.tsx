@@ -1,3 +1,3 @@
-const App = () => <>Hello World!</>;
+const App = () => <>Hello World!</>
 
-export default App;
+export default App
