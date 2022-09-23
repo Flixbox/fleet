@@ -1,3 +1,3 @@
 const apiUrl = process.env.API_URL || ""
 
-export const fetchCars = () => fetch(`${apiUrl}`)
+export const fetchCars = async () => (await fetch(`${apiUrl}`)).json()

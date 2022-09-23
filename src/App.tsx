@@ -10,7 +10,7 @@ const App = () => {
 
   useEffect(() => {
     ;(async () => {
-      const cars: Car[] = await (await fetchCars()).json()
+      const cars: Car[] = await fetchCars()
       setCars(cars)
     })()
   }, [])
