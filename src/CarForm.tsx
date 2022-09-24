@@ -39,6 +39,7 @@ const CarForm = ({ onSubmit }: CarFormProps) => {
         onSubmit={form.onSubmit(async (values) => {
           ;(await onSubmit(values)) && form.reset()
         })}
+        role="form"
       >
         <TextInput
           required
