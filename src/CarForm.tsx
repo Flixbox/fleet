@@ -1,8 +1,5 @@
 import { EnumValues } from "enum-values"
 import {
-  MantineProvider,
-  Container,
-  Box,
   Paper,
   TextInput,
   Group,
@@ -19,6 +16,7 @@ interface CarFormProps {
 export interface CarFormData {
   id: Car["id"]
   brand: Car["brand"]
+  operationCity: Car["operationCity"]
   manufacturer: Car["manufacturer"]
   licensePlate: Car["licensePlate"]
   status: Car["status"]
@@ -29,6 +27,7 @@ const CarForm = ({ onSubmit }: CarFormProps) => {
     initialValues: {
       id: "",
       brand: "",
+      operationCity: "",
       manufacturer: "",
       licensePlate: "",
       status: Status.available,
@@ -62,6 +61,13 @@ const CarForm = ({ onSubmit }: CarFormProps) => {
           label="Manufacturer"
           placeholder="Chevy"
           {...form.getInputProps("manufacturer")}
+        />
+
+        <TextInput
+          required
+          label="Operation city"
+          placeholder="Hamburg"
+          {...form.getInputProps("operationCity")}
         />
 
         <TextInput

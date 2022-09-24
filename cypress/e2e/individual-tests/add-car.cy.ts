@@ -17,6 +17,9 @@ describe("add car", () => {
       .findByLabelText("Brand", { exact: false })
       .type(car.brand)
     cy.findByRole("form")
+      .findByLabelText("Operation city", { exact: false })
+      .type(car.operationCity)
+    cy.findByRole("form")
       .findByLabelText("Status", { exact: false })
       .type(car.status)
     cy.findByRole("form")
@@ -36,6 +39,9 @@ describe("add car", () => {
   it("fails when adding the same ID again", () => {
     cy.findByLabelText("ID", { exact: false }).type(car.id)
     cy.findByLabelText("Brand", { exact: false }).type(car.brand)
+    cy.findByLabelText("Operation city", { exact: false }).type(
+      car.operationCity
+    )
     cy.findByLabelText("Status", { exact: false }).type(car.status)
     cy.findByLabelText("License plate", { exact: false }).type(car.licensePlate)
     cy.findByLabelText("Manufacturer", { exact: false }).type(car.manufacturer)

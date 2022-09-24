@@ -6,6 +6,7 @@ describe("list of cars", () => {
   })
   it("shows a car", () => {
     cy.contains(car.brand)
+    cy.contains(car.operationCity)
     cy.contains(new Date(car.createdAt).toLocaleString())
     cy.contains(car.id)
     cy.contains(new Date(car.lastUpdatedAt).toLocaleString())

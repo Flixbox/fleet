@@ -1,13 +1,4 @@
-import {
-  MantineProvider,
-  Container,
-  Box,
-  Paper,
-  Text,
-  Group,
-  Button,
-} from "@mantine/core"
-import { useState } from "react"
+import { Paper, Text, Group, Button } from "@mantine/core"
 import { Car } from "./types"
 
 interface CarListProps {
@@ -28,10 +19,12 @@ const CarList = ({ cars, onDelete }: CarListProps) => {
           lastUpdatedAt,
           licensePlate,
           status,
+          operationCity,
         }) => (
           <Paper key={id} shadow="xs" withBorder p="md">
             <Text>Brand: {brand}</Text>
-            <Text>Brand: {manufacturer}</Text>
+            <Text>Manufacturer: {manufacturer}</Text>
+            <Text>Operation city: {operationCity}</Text>
             <Text>Created at: {new Date(createdAt).toLocaleString()}</Text>
             <Text>
               Last updated at: {new Date(lastUpdatedAt).toLocaleString()}
