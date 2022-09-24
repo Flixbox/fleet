@@ -29,7 +29,11 @@ const CarList = ({ cars, onDelete }: CarListProps) => {
             <Text>status: {status}</Text>
             <Text>id: {id}</Text>
             <Group position="right" mt="md">
-              <Button color="red" onClick={() => onDelete(id)}>
+              <Button
+                color="red"
+                onClick={() => onDelete(id)}
+                data-testid={`delete-${id}`}
+              >
                 Delete car
               </Button>
             </Group>
