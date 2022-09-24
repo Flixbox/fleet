@@ -7,6 +7,8 @@
 
 Manage your cars - perfectly!
 
+https://user-images.githubusercontent.com/14835021/192099923-74c2bdc5-7202-4b1c-80ad-cf227e75c987.mp4
+
 ## Time estimate
 
 Interval 1 (2022-09-23 to 2022-09-24): 2:30h
