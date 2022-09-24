@@ -13,10 +13,10 @@ import { useForm } from "@mantine/form"
 import { Car, Status } from "./types"
 
 interface CarFormProps {
-  onSubmit: (car: Car) => void
+  onSubmit: (car: CarFormData) => Promise<Car>
 }
 
-interface CarForm {
+export interface CarFormData {
   id: Car["id"]
   brand: Car["brand"]
   licensePlate: Car["licensePlate"]
@@ -24,7 +24,7 @@ interface CarForm {
 }
 
 const CarForm = ({ onSubmit }: CarFormProps) => {
-  const form = useForm<CarForm>({
+  const form = useForm<CarFormData>({
     initialValues: {
       id: "",
       brand: "",
@@ -35,7 +35,12 @@ const CarForm = ({ onSubmit }: CarFormProps) => {
 
   return (
     <Paper shadow="xs" withBorder p="md">
-      <form onSubmit={form.onSubmit((values) => console.log(values))}>
+      <form
+        onSubmit={form.onSubmit(async (values) => {
+          await onSubmit(values)
+          form.reset()
+        })}
+      >
         <TextInput
           required
           label="ID"

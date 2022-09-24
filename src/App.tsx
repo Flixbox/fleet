@@ -6,8 +6,8 @@ import {
   Text,
 } from "@mantine/core"
 import { useEffect, useState } from "react"
-import { fetchCars } from "./api"
-import CarForm from "./CarForm"
+import { addCar, fetchCars } from "./api"
+import CarForm, { CarFormData } from "./CarForm"
 import CarList from "./CarList"
 import { Car } from "./types"
 
@@ -21,6 +21,12 @@ const App = () => {
     })()
   }, [])
 
+  const handleAddCar = async (car: CarFormData) => {
+    const newCar = await addCar(car)
+    setCars([...cars, newCar])
+    return newCar
+  }
+
   return (
     <MantineProvider
       withGlobalStyles
@@ -31,7 +37,7 @@ const App = () => {
       <Container>
         <SimpleGrid cols={1}>
           <Box>
-            <CarForm onSubmit={(car) => setCars([...cars, car])} />
+            <CarForm onSubmit={handleAddCar} />
           </Box>
           <CarList cars={cars} />
         </SimpleGrid>
