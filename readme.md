@@ -1,12 +1,9 @@
 # Fleet Management System
 
 [![Build and Test](https://github.com/Flixbox/fleet/actions/workflows/deploy.yml/badge.svg?branch=challenge)](https://github.com/Flixbox/fleet/actions/workflows/deploy.yml)
-
-[
-![](https://img.shields.io/codeclimate/maintainability/Flixbox/fleet?style=flat&logo=code%20climate)
-![](https://img.shields.io/codeclimate/issues/Flixbox/fleet?style=flat&logo=code%20climate)
-![](https://img.shields.io/codeclimate/tech-debt/Flixbox/fleet?style=flat&logo=code%20climate)
-](https://codeclimate.com/github/Flixbox/fleet)
+[![](https://img.shields.io/static/v1?label=UI&message=Mantine&color=blue&logo=jss)](https://mantine.dev)
+![](https://img.shields.io/static/v1?label=CSS&message=none%20in%20source&color=blue&logo=css3)
+![](https://img.shields.io/static/v1?label=Overengineered&message=at%20least%2030%&color=green&logo=react)
 
 Manage your cars - perfectly!
 
@@ -24,6 +21,7 @@ Manage your cars - perfectly!
 - Deployment: GitHub Pages is currently disabled to prevent leaking the API
 - Mock back-end data (or set up back-end in test environment and seed) - Currently we're deleting and re-adding the same car, which can cause errors and false positives if a third party adds similar data
 - Test coverage
+- Edit existing cars
 
 ## Setup
 
