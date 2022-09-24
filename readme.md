@@ -5,9 +5,13 @@
 ![](https://img.shields.io/static/v1?label=CSS&message=none%20in%20source&color=blue&logo=css3)
 ![](https://img.shields.io/static/v1?label=Overengineered&message=at%20least%2030%&color=green&logo=react)
 
+[
+![](https://img.shields.io/codeclimate/maintainability/Flixbox/fleet?style=flat&logo=code%20climate)
+![](https://img.shields.io/codeclimate/issues/Flixbox/fleet?style=flat&logo=code%20climate)
+![](https://img.shields.io/codeclimate/tech-debt/Flixbox/fleet?style=flat&logo=code%20climate)
+](https://codeclimate.com/github/Flixbox/fleet)
+
 Manage your cars - perfectly!
-
-
 
 https://user-images.githubusercontent.com/14835021/192100578-fda5413f-7a18-4296-aa42-a4283104d138.mp4
 
