@@ -31,7 +31,13 @@ const App = () => {
         message: `Check the list to see the details.`,
       })
       return newCar
-    } catch (e) {}
+    } catch (e: any) {
+      showNotification({
+        color: "red",
+        title: e.message,
+        message: "Try changing your data fields and try again!",
+      })
+    }
   }
 
   return (

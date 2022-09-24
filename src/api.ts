@@ -12,13 +12,7 @@ export const addCar = async (car: CarFormData): Promise<Car> => {
     method: "PUT",
     body: JSON.stringify(car),
   })
-  if (!res.ok) {
-    showNotification({
-      color: "red",
-      title: `Response code ${res.status}`,
-      message: "Try changing your data fields and try again!",
-    })
-    throw new Error("Response data not OK")
-  }
+  if (!res.ok) throw new Error(`Response code ${res.status}`)
+
   return res.json()
 }

@@ -13,7 +13,7 @@ import { useForm } from "@mantine/form"
 import { Car, Status } from "./types"
 
 interface CarFormProps {
-  onSubmit: (car: CarFormData) => Promise<Car>
+  onSubmit: (car: CarFormData) => Promise<Car | undefined>
 }
 
 export interface CarFormData {
@@ -37,8 +37,7 @@ const CarForm = ({ onSubmit }: CarFormProps) => {
     <Paper shadow="xs" withBorder p="md">
       <form
         onSubmit={form.onSubmit(async (values) => {
-          await onSubmit(values)
-          form.reset()
+          ;(await onSubmit(values)) && form.reset()
         })}
       >
         <TextInput
