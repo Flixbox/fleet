@@ -18,7 +18,7 @@ Manage your cars - perfectly!
 - Error handling
 - Tests
 
-## Potential improvements & Over-Engineering
+## Possible improvements & Over-Engineering
 
 - Autocomplete car model field based on public car model api [here](https://api-ninjas.com/api/cars)
 - Deployment: GitHub Pages is currently disabled to prevent leaking the API
@@ -29,7 +29,7 @@ Manage your cars - perfectly!
 
 Install dependencies with `yarn`
 
-Prefix any frontend-based command (like running the webapp) with `npx cross-env API_URL=<your api endpoint> <script here>`. The API URL is not hardcoded to avoid leaks.
+Prefix any frontend-based command (like running the webapp) with `npx cross-env API_URL=<your api endpoint> <script here>`. The API URL is not hardcoded to avoid leaks. It ends on `/cars`.
 
 For Cypress, use `CYPRESS_API_URL` instead of `API_URL`.
 
