@@ -13,6 +13,8 @@ Interval 1 (2022-09-23 to 2022-09-24): 2:30h
 
 Interval 2 (2022-09-24): 3h
 
+Maybe add 30 minutes for minor improvements. That makes a total time of 6 hours.
+
 ## Features
 
 - Show all cars in a list
