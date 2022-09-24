@@ -11,5 +11,6 @@ describe("list of cars", () => {
     cy.contains(new Date(car.lastUpdatedAt).toLocaleString())
     cy.contains(car.licensePlate)
     cy.contains(car.status)
+    cy.contains(car.manufacturer)
   })
 })

@@ -20,9 +20,18 @@ const CarList = ({ cars, onDelete }: CarListProps) => {
     <>
       <Text weight="bold">All cars</Text>
       {cars.map(
-        ({ brand, createdAt, id, lastUpdatedAt, licensePlate, status }) => (
+        ({
+          brand,
+          manufacturer,
+          createdAt,
+          id,
+          lastUpdatedAt,
+          licensePlate,
+          status,
+        }) => (
           <Paper key={id} shadow="xs" withBorder p="md">
             <Text>Brand: {brand}</Text>
+            <Text>Brand: {manufacturer}</Text>
             <Text>Created at: {new Date(createdAt).toLocaleString()}</Text>
             <Text>
               Last updated at: {new Date(lastUpdatedAt).toLocaleString()}

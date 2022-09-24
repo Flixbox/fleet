@@ -6,6 +6,7 @@ export enum Status {
 
 export interface Car {
   brand: string
+  manufacturer: string
   createdAt: string
   id: string
   lastUpdatedAt: string

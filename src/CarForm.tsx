@@ -19,6 +19,7 @@ interface CarFormProps {
 export interface CarFormData {
   id: Car["id"]
   brand: Car["brand"]
+  manufacturer: Car["manufacturer"]
   licensePlate: Car["licensePlate"]
   status: Car["status"]
 }
@@ -28,6 +29,7 @@ const CarForm = ({ onSubmit }: CarFormProps) => {
     initialValues: {
       id: "",
       brand: "",
+      manufacturer: "",
       licensePlate: "",
       status: Status.available,
     },
@@ -53,6 +55,13 @@ const CarForm = ({ onSubmit }: CarFormProps) => {
           label="Brand"
           placeholder="Corvette 1"
           {...form.getInputProps("brand")}
+        />
+
+        <TextInput
+          required
+          label="Manufacturer"
+          placeholder="Chevy"
+          {...form.getInputProps("manufacturer")}
         />
 
         <TextInput
