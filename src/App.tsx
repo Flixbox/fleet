@@ -5,6 +5,7 @@ import {
   SimpleGrid,
   Text,
 } from "@mantine/core"
+import { NotificationsProvider, showNotification } from "@mantine/notifications"
 import { useEffect, useState } from "react"
 import { addCar, fetchCars } from "./api"
 import CarForm, { CarFormData } from "./CarForm"
@@ -22,9 +23,15 @@ const App = () => {
   }, [])
 
   const handleAddCar = async (car: CarFormData) => {
-    const newCar = await addCar(car)
-    setCars([...cars, newCar])
-    return newCar
+    try {
+      const newCar = await addCar(car)
+      setCars([...cars, newCar])
+      showNotification({
+        title: `Car with ID ${newCar.id} added!`,
+        message: `Check the list to see the details.`,
+      })
+      return newCar
+    } catch (e) {}
   }
 
   return (
@@ -33,15 +40,17 @@ const App = () => {
       withNormalizeCSS
       theme={{ colorScheme: "dark" }}
     >
-      <Box m="md" />
-      <Container>
-        <SimpleGrid cols={1}>
-          <Box>
-            <CarForm onSubmit={handleAddCar} />
-          </Box>
-          <CarList cars={cars} />
-        </SimpleGrid>
-      </Container>
+      <NotificationsProvider>
+        <Box m="md" />
+        <Container>
+          <SimpleGrid cols={1}>
+            <Box>
+              <CarForm onSubmit={handleAddCar} />
+            </Box>
+            <CarList cars={cars} />
+          </SimpleGrid>
+        </Container>
+      </NotificationsProvider>
     </MantineProvider>
   )
 }
