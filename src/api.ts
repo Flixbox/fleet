@@ -16,3 +16,11 @@ export const addCar = async (car: CarFormData): Promise<Car> => {
 
   return res.json()
 }
+
+export const deleteCar = async (id: Car["id"]) => {
+  const res = await fetch(`${apiUrl}/${id}`, {
+    method: "DELETE",
+  })
+  if (!res.ok) throw new Error(`Response code ${res.status}`)
+  return
+}
