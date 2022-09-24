@@ -23,11 +23,13 @@ const CarList = ({ cars, onDelete }: CarListProps) => {
         ({ brand, createdAt, id, lastUpdatedAt, licensePlate, status }) => (
           <Paper key={id} shadow="xs" withBorder p="md">
             <Text>Brand: {brand}</Text>
-            <Text>createdAt: {createdAt}</Text>
-            <Text>lastUpdatedAt: {lastUpdatedAt}</Text>
-            <Text>licensePlate: {licensePlate}</Text>
-            <Text>status: {status}</Text>
-            <Text>id: {id}</Text>
+            <Text>Created at: {new Date(createdAt).toLocaleString()}</Text>
+            <Text>
+              Last updated at: {new Date(lastUpdatedAt).toLocaleString()}
+            </Text>
+            <Text>License plate: {licensePlate}</Text>
+            <Text>Status: {status}</Text>
+            <Text>ID: {id}</Text>
             <Group position="right" mt="md">
               <Button
                 color="red"

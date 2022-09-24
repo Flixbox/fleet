@@ -7,6 +7,12 @@
 
 Manage your cars - perfectly!
 
+## Time estimate
+
+Interval 1 (2022-09-23 to 2022-09-24): 2:30h
+
+Interval 2 (2022-09-24): 3h
+
 ## Features
 
 - Show all cars in a list
@@ -27,15 +33,17 @@ Manage your cars - perfectly!
 
 Install dependencies with `yarn`
 
-Prefix any frontend-based command (like running the webapp) with `npx cross-env API_URL=<your api endpoint> <script here>`. The API URL is not hardcoded to avoid leaks. It ends on `/cars`.
+Prefix any frontend-based command (like running the webapp) with `npx cross-env API_URL=<your api endpoint> <script here>`. The API URL is not hardcoded to avoid leaks. It ends on `/cars` (not `/` and not `/cars/`).
 
 For Cypress, use `CYPRESS_API_URL` instead of `API_URL`.
 
 ## Run
 
-Run `npx cross-env API_URL=<your api endpoint> yarn vite:dev` to open the front-end in dev mode.
+Run `npx cross-env API_URL=<your api endpoint> yarn vite:dev` to open the webapp in dev mode.
 
 ## Tests
+
+Make sure that the webapp is running.
 
 Run `npx cross-env CYPRESS_API_URL=<your api endpoint> yarn cy:open` to open cypress in watch mode.
 
