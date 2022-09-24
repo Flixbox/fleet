@@ -35,11 +35,12 @@ Maybe add 30 minutes for minor improvements. That makes a total time of 6 hours.
 
 ## Possible improvements & Over-Engineering
 
-- Autocomplete car model field based on public car model api [here](https://api-ninjas.com/api/cars)
+- Autocomplete car model fields based on public car model api [here](https://api-ninjas.com/api/cars)
 - Deployment: GitHub Pages is currently disabled to prevent leaking the API
 - Mock back-end data (or set up back-end in test environment and seed) - Currently we're deleting and re-adding the same car, which can cause errors and false positives if a third party adds similar data
 - Test coverage
 - Edit existing cars
+- ESLint
 
 ## Setup
 
