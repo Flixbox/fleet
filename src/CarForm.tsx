@@ -35,10 +35,17 @@ const CarForm = ({ onSubmit }: CarFormProps) => {
     <Paper shadow="xs" withBorder p="md">
       <form onSubmit={form.onSubmit((values) => console.log(values))}>
         <TextInput
-          withAsterisk
+          required
           label="Brand"
           placeholder="Corvette 1"
           {...form.getInputProps("brand")}
+        />
+
+        <TextInput
+          required
+          label="License plate"
+          placeholder="ABC-123"
+          {...form.getInputProps("licensePlate")}
         />
 
         <Select
@@ -49,6 +56,7 @@ const CarForm = ({ onSubmit }: CarFormProps) => {
             label: status,
           }))}
           searchable
+          required
           {...form.getInputProps("status")}
         />
 
