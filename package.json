@@ -11,6 +11,7 @@
     "cy:ci": "run-p vite:dev cy:run -r"
   },
   "dependencies": {
+    "@anatoliygatt/use-prefers-color-scheme": "^1.0.3",
     "@emotion/react": "^11.10.4",
     "@mantine/core": "^5.4.0",
     "@mantine/form": "^5.4.0",

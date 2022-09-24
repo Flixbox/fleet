@@ -6,6 +6,7 @@ import {
   Text,
 } from "@mantine/core"
 import { NotificationsProvider, showNotification } from "@mantine/notifications"
+import { usePrefersColorScheme } from "@anatoliygatt/use-prefers-color-scheme"
 import { useEffect, useState } from "react"
 import { addCar, deleteCar, fetchCars } from "./api"
 import CarForm, { CarFormData } from "./CarForm"
@@ -14,6 +15,7 @@ import { Car } from "./types"
 
 const App = () => {
   const [cars, setCars] = useState<Car[]>([])
+  const preferredColorScheme = usePrefersColorScheme()
 
   useEffect(() => {
     ;(async () => {
@@ -62,7 +64,9 @@ const App = () => {
     <MantineProvider
       withGlobalStyles
       withNormalizeCSS
-      theme={{ colorScheme: "dark" }}
+      theme={{
+        colorScheme: preferredColorScheme === "dark" ? "dark" : "light",
+      }}
     >
       <NotificationsProvider>
         <Box m="md" />
