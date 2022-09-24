@@ -11,7 +11,7 @@ Manage your cars - perfectly!
 
 https://user-images.githubusercontent.com/14835021/192100578-fda5413f-7a18-4296-aa42-a4283104d138.mp4
 
-
+(One field is missing in the video because I added that one later)
 
 ## Time estimate
 
