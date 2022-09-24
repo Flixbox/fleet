@@ -1,4 +1,4 @@
-import car from "../fixtures/car.json"
+import car from "../../fixtures/car.json"
 
 describe("list of cars", () => {
   before(() => {
