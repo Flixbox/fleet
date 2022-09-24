@@ -1,0 +1,37 @@
+{
+  "name": "fleet",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "vite:dev": "vite",
+    "vite:build": "tsc && vite build",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:ci": "run-p vite:dev cy:run -r"
+  },
+  "dependencies": {
+    "@anatoliygatt/use-prefers-color-scheme": "^1.0.3",
+    "@emotion/react": "^11.10.4",
+    "@mantine/core": "^5.4.0",
+    "@mantine/form": "^5.4.0",
+    "@mantine/hooks": "^5.4.0",
+    "@mantine/modals": "^5.4.0",
+    "@mantine/notifications": "^5.4.0",
+    "enum-values": "^1.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@testing-library/cypress": "^8.0.3",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@types/source-list-map": "^0.1.2",
+    "@vitejs/plugin-react": "^2.1.0",
+    "cypress": "^10.8.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^4.6.4",
+    "vite": "^3.1.0",
+    "vite-plugin-mkcert": "^1.9.0"
+  }
+}

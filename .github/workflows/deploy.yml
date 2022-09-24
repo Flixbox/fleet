@@ -1,0 +1,38 @@
+name: Build and Test
+
+on:
+  push:
+    branches:
+      - main
+      - challenge
+
+jobs:
+  mainjob:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: yarn
+      - name: Install dependencies
+        run: yarn
+      - name: Test website
+        run: yarn cy:ci
+        env:
+          API_URL: ${{ secrets.API_URL }}
+      - name: Build website
+        run: yarn vite:build
+        env:
+          API_URL: ${{ secrets.API_URL }}
+
+      # Don't deploy to GitHub Pages to avoid leaking the API URL.
+      # - name: Deploy to GitHub Pages
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     # Build output to publish to the `gh-pages` branch:
+      #     publish_dir: ./dist
