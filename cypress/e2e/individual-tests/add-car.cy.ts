@@ -5,6 +5,7 @@ describe("add car", () => {
     cy.visit("/")
   })
   it("adds a new car to the list", () => {
+    cy.findByLabelText("ID", { exact: false }).type(car.id)
     cy.findByLabelText("Brand", { exact: false }).type(car.brand)
     cy.findByLabelText("Status", { exact: false }).type(car.status)
     cy.findByLabelText("License plate", { exact: false }).type(car.licensePlate)

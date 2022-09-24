@@ -17,14 +17,16 @@ interface CarFormProps {
 }
 
 interface CarForm {
+  id: Car["id"]
   brand: Car["brand"]
   licensePlate: Car["licensePlate"]
-  status: Status
+  status: Car["status"]
 }
 
 const CarForm = ({ onSubmit }: CarFormProps) => {
   const form = useForm<CarForm>({
     initialValues: {
+      id: "",
       brand: "",
       licensePlate: "",
       status: Status.available,
@@ -34,6 +36,13 @@ const CarForm = ({ onSubmit }: CarFormProps) => {
   return (
     <Paper shadow="xs" withBorder p="md">
       <form onSubmit={form.onSubmit((values) => console.log(values))}>
+        <TextInput
+          required
+          label="ID"
+          placeholder="123456789"
+          {...form.getInputProps("id")}
+        />
+
         <TextInput
           required
           label="Brand"
